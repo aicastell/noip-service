@@ -1,10 +1,10 @@
 # Register your public IP address to NOIP service
 
-This docker image allows to register your public IP address in noip service. Steps:
+This docker image allows to register your public IP address in noip service. First of all, you need to register to the NOIP web service:
 
 ## Setup account
 
-Setup an account in www.noip.com, creating user and password, and choosing a domain name
+Setup an account in www.noip.com, creating user and password, and choosing a domain name. After download this git repository:
 
 ## Download git repo
 
@@ -12,16 +12,19 @@ Download this git repository
 
 `git clone https://github.com/aicastell/noip-service.git`
 
+After build the docker image:
+
 ## Build docker image
 
 Build the docker image executing this command:
 
-`cd src`
-`docker build -t noip .`
+`docker build -t noip src/`
 
 Check if the image has been properly generated using this command:
 
 `docker images`
+
+After run the docker container:
 
 ## Run the container
 
@@ -40,3 +43,9 @@ Check if the container is running
 Check the container logs:
 
 `docker logs register-dns`
+
+# More simple, better
+
+The easiest way to do all this stuff is using docker-compose in a single command:
+
+`cd src; docker-compose up -d`
