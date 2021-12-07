@@ -16,6 +16,7 @@ Download this git repository
 
 Build the docker image executing this command:
 
+`cd src`
 `docker build -t noip .`
 
 Check if the image has been properly generated using this command:
@@ -29,7 +30,6 @@ PASSWORD and UPDATE_INTERVAL. Take into account UPDATE_INTERVAL is a value in
 minutes (60s)
 
 `docker run -d -e "USER=contacto@criptobadia.com" -e "PASSWORD=1234" -e "UPDATE_INTERVAL=60" --name register-dns noip:latest`
-
 
 ## Tests
 
