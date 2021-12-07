@@ -37,7 +37,7 @@ first step, and an update interval (in minutes) to register your public IP
 address in the remote service. These values are provided to the container
 using USER, PASSWORD and UPDATE_INTERVAL environment variables.
 
-`docker run -d -e "USER=contacto@criptobadia.com" -e "PASSWORD=1234" -e "UPDATE_INTERVAL=60" --name register-dns noip:latest`
+`docker run -d -e "USER=contacto@criptobadia.es" -e "PASSWORD=1234" -e "UPDATE_INTERVAL=60" --name register-dns noip:latest`
 
 The service is already running.
 
