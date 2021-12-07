@@ -1,38 +1,40 @@
 # Register your public IP address to NOIP service
 
-This docker image allows to register your public IP address in noip service. First of all, you need to register to the NOIP web service:
+This docker image allows to register your public IP address to NOIP service.
 
-## Setup account
+## Create NOIP account
 
-Setup an account in www.noip.com, creating user and password, and choosing a domain name. After download this git repository:
+First of all you need to create an account in www.noip.com. You will be
+prompted to choose a user (an email address) and a password. This information
+will be used later on.
 
 ## Download git repo
 
-Download this git repository
+Download this git repository. To do that, execute this command:
 
 `git clone https://github.com/aicastell/noip-service.git`
 
-After build the docker image:
-
 ## Build docker image
 
-Build the docker image executing this command:
+Now you need to build the docker image defined on the Dockerfile file. Execute this command:
 
 `docker build -t noip src/`
 
-Check if the image has been properly generated using this command:
+Check if the docker image has been properly created. Use this command:
 
 `docker images`
 
-After run the docker container:
-
 ## Run the container
 
-Run the container defining proper valures for environment variables USER,
-PASSWORD and UPDATE_INTERVAL. Take into account UPDATE_INTERVAL is a value in
-minutes (60s)
+Now you need to run a container using the image built in previous step. You
+must provide values for the user and password account you created in the very
+first step, and an update interval (in minutes) to register your public IP
+address in the remote service. These values are provided to the container
+using USER, PASSWORD and UPDATE_INTERVAL environment variables.
 
 `docker run -d -e "USER=contacto@criptobadia.com" -e "PASSWORD=1234" -e "UPDATE_INTERVAL=60" --name register-dns noip:latest`
+
+The service is already running.
 
 ## Tests
 
@@ -46,6 +48,7 @@ Check the container logs:
 
 # More simple, better
 
-The easiest way to do all this stuff is using docker-compose in a single command:
+The easiest way to do all this stuff in a single command is using
+docker-compose. All you need is run this command:
 
 `cd src; docker-compose up -d`
