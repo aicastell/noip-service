@@ -14,7 +14,12 @@ Download this git repository. To do that, execute this command:
 
 `git clone https://github.com/aicastell/noip-service.git`
 
-## Build docker image
+Now you will find two options to run the service, one is using docker and the
+other one is using docker-compose.
+
+## Option 1: Using docker
+
+### Build docker image
 
 Now you need to build the docker image defined on the Dockerfile file. Execute this command:
 
@@ -24,7 +29,7 @@ Check if the docker image has been properly created. Use this command:
 
 `docker images`
 
-## Run the container
+### Run the docker container
 
 Now you need to run a container using the image built in previous step. You
 must provide values for the user and password account you created in the very
@@ -36,9 +41,18 @@ using USER, PASSWORD and UPDATE_INTERVAL environment variables.
 
 The service is already running.
 
+## Option 2: Using docker compose
+
+### All in one step
+
+The easiest way to do all this stuff in a single command is using
+docker-compose. All you need is run this command:
+
+`cd src; docker-compose up -d`
+
 ## Tests
 
-Check if the container is running
+In case of problems use this command to check if the docker container is running:
 
 `docker ps | grep register-dns`
 
@@ -46,9 +60,4 @@ Check the container logs:
 
 `docker logs register-dns`
 
-# More simple, better
 
-The easiest way to do all this stuff in a single command is using
-docker-compose. All you need is run this command:
-
-`cd src; docker-compose up -d`
