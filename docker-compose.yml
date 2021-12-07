@@ -1,0 +1,12 @@
+version: '3'
+services:
+  noip:
+    image: noip:latest
+    container_name: register-dns
+    environment:
+        USER: contacto@criptobadia.es
+        PASSWORD: 1234
+        UPDATE_INTERVAL: 60
+    build:
+        context: .
+        dockerfile: Dockerfile
