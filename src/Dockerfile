@@ -6,7 +6,7 @@ RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y wget make gcc
 
-RUN wget -qO noip.tar.gz http://www.noip.com/client/linux/noip-duc-linux.tar.gz && \
+RUN wget -qO noip.tar.gz https://www.noip.com/client/linux/noip-duc-linux.tar.gz && \
     mkdir noip && \
     tar -C noip --strip-components=1 -xvf ./noip.tar.gz && \
     cd noip && \
